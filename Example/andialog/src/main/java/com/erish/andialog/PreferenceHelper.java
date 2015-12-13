@@ -34,6 +34,8 @@ final class PreferenceHelper {
         SharedPreferences.Editor editor = getPreferencesEditor(context);
         editor.remove(PREF_KEY_INSTALL_DATE);
         editor.remove(PREF_KEY_LAUNCH_TIMES);
+        editor.remove(PREF_KEY_REMIND_INTERVAL);
+        editor.remove(PREF_KEY_EVENT_TIMES);
         editor.apply();
     }
 
