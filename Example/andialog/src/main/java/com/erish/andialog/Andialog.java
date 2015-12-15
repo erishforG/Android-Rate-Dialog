@@ -21,7 +21,7 @@ public class Andialog {
 
     private int launchTimes = -1;
 
-    private int remindInterval = 5;
+    private int remindInterval = 1;
 
     private int eventsTimes = -1;
 
