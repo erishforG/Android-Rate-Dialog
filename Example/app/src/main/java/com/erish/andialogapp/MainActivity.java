@@ -5,9 +5,13 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import com.erish.andialog.Andialog;
+import com.erish.andialog.OnClickButtonListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +30,35 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        /**
+         * Anidialog
+         *
+         * Andialog starts with with function.
+         *
+         * Each conditions (setInstallDate, setLaunchTimes, setRemindInterval, setEventTimes)
+         * has no impacts until users set values.
+         *
+         * If users set values in this conditions,
+         * then Andialog will work with users' setting values except non-set values.
+         *
+         */
+
+        Andialog.with(this)
+                .setInstallDate(0) // default -1, 0 means 1st launch day(install day).
+                .setLaunchTimes(3) // default -1, 1 means 1st launch day(install day).
+                .setRemindInterval(1) // default 1
+                .setShowNeutralButton(true) // default true
+                .setOnClickButtonListener(new OnClickButtonListener() { // callback listener.
+                    @Override
+                    public void onClickButton(int which) {
+                        Log.d(MainActivity.class.getName(), Integer.toString(which));
+                    }
+                })
+                .setIsDebug(true) // this is for debug (ignore all conditions)
+                .launch();
+
+        Andialog.showRateDialogIfMeetsConditions(this);
     }
 
     @Override
