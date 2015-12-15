@@ -3,10 +3,6 @@ package com.erish.andialog;
 import android.content.Context;
 import android.view.View;
 
-import com.erish.andialog.CommonInfo;
-import com.erish.andialog.OnClickButtonListener;
-import com.erish.andialog.R;
-
 final class DialogOptions {
 
     private boolean showNeutralButton = true;
@@ -28,6 +24,8 @@ final class DialogOptions {
     private int textNeutralResId = R.string.rate_dialog_cancel;
 
     private int textNegativeResId = R.string.rate_dialog_no;
+
+    private int dialogStyleResId = R.style.AppCompatAlertDialogStyle;
 
     private String titleText = null;
 
@@ -121,6 +119,14 @@ final class DialogOptions {
 
     public void setTextNegativeResId(int textNegativeResId) {
         this.textNegativeResId = textNegativeResId;
+    }
+
+    public int getDialogStyleResId() {
+        return dialogStyleResId;
+    }
+
+    public void setDialogStyleResId(int dialogStyleResId) {
+        this.dialogStyleResId = dialogStyleResId;
     }
 
     public View getView() {

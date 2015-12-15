@@ -13,12 +13,12 @@ final class DialogManager {
     private DialogManager() {
     }
 
-    static private AlertDialog.Builder getDialogBuilder(Context context) {
+    static private AlertDialog.Builder getDialogBuilder(final Context context) {
         return new AlertDialog.Builder(context);
     }
 
-    static private android.support.v7.app.AlertDialog.Builder getMaterialDialogBuilder(Context context) {
-        return new android.support.v7.app.AlertDialog.Builder(context, R.style.AppCompatAlertDialogStyle);
+    static private android.support.v7.app.AlertDialog.Builder getMaterialDialogBuilder(final Context context, final DialogOptions options) {
+        return new android.support.v7.app.AlertDialog.Builder(context, options.getDialogStyleResId());
     }
 
     static private Dialog createDialog(final Context context, final DialogOptions options) {
@@ -75,7 +75,7 @@ final class DialogManager {
     }
 
     static private Dialog createMaterialDailog(final Context context, final DialogOptions options) {
-        android.support.v7.app.AlertDialog.Builder builder = getMaterialDialogBuilder(context);
+        android.support.v7.app.AlertDialog.Builder builder = getMaterialDialogBuilder(context, options);
 
         builder.setMessage(options.getMessageText(context));
 
