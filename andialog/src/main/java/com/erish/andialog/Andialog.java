@@ -219,6 +219,11 @@ public class Andialog {
         return this;
     }
 
+    public Andialog setDialogStyle(int style) {
+        options.setDialogStyleResId(style);
+        return this;
+    }
+
     public Andialog setIsDebug(boolean isDebug) {
         this.isDebug = isDebug;
         return this;
