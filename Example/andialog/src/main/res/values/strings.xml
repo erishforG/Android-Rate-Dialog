@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">Andialog</string>
-    <string name="rate_dialog_title">Hello World</string>
-    <string name="rate_dialog_message">If you enjoy playing this app, would you mind taking a moment to rate it? It won\'t take more than a minute. Thanks for your support!</string>
-    <string name="rate_dialog_positive">Rate It Now</string>
-    <string name="rate_diloag_neutral">Remind Me Later</string>
-    <string name="rate_dialog_negative">No, Thanks</string>
-</resources>
