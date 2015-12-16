@@ -7,10 +7,78 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
 final class DialogManager {
 
+    private static DialogManager singleton;
+
+    private static Context context;
+
+    static Dialog dialog = null;
+
     private DialogManager() {
+    }
+
+    private DialogManager(Context context) {
+        this.context = context;
+    }
+
+    public static DialogManager with(Context context) {
+        if (singleton == null) {
+            synchronized (DialogManager.class) {
+                if (singleton == null) {
+                    singleton = new DialogManager(context);
+                }
+            }
+        }
+        return singleton;
+    }
+
+    public DialogManager create(final DialogOptions options) {
+        if(dialog != null)
+            return this;
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
+            dialog = createDialog(context, options);
+        } else {
+            dialog = createMaterialDailog(context, options);
+        }
+
+        return this;
+    }
+
+    public void show() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
+            showDialog();
+        } else {
+            showMaterialDialog();
+        }
+    }
+
+    static private void showDialog() {
+        AlertDialog alertDialog = (AlertDialog) dialog;
+        alertDialog.show();
+
+        try{
+            final Button button = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
+            LinearLayout linearLayout = (LinearLayout) button.getParent();
+            linearLayout.setOrientation(LinearLayout.VERTICAL);
+        } catch(Exception ex){
+        }
+    }
+
+    static private void showMaterialDialog() {
+        android.support.v7.app.AlertDialog alertDialog = (android.support.v7.app.AlertDialog) dialog;
+        alertDialog.show();
+
+        try{
+            final Button button = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
+            LinearLayout linearLayout = (LinearLayout) button.getParent();
+            linearLayout.setOrientation(LinearLayout.VERTICAL);
+        } catch(Exception ex){
+        }
     }
 
     static private AlertDialog.Builder getDialogBuilder(final Context context) {
@@ -126,13 +194,4 @@ final class DialogManager {
 
         return builder.create();
     }
-
-    static Dialog create(final Context context, final DialogOptions options) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
-            return createDialog(context, options);
-        } else {
-            return createMaterialDailog(context, options);
-        }
-    }
-
 }

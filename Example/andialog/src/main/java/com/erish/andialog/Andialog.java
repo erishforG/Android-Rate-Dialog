@@ -226,7 +226,7 @@ public class Andialog {
 
     public void showRateDialog(Activity activity) {
         if (!activity.isFinishing()) {
-            DialogManager.create(activity, options).show();
+            DialogManager.with(activity).create(options).show();
         }
     }
 }
