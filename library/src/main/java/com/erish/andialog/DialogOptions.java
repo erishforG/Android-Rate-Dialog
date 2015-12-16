@@ -19,11 +19,11 @@ final class DialogOptions {
 
     private int messageResId = R.string.rate_dialog_message;
 
-    private int textPositiveResId = R.string.rate_dialog_ok;
+    private int textPositiveResId = R.string.rate_dialog_positive;
 
-    private int textNeutralResId = R.string.rate_dialog_cancel;
+    private int textNeutralResId = R.string.rate_diloag_neutral;
 
-    private int textNegativeResId = R.string.rate_dialog_no;
+    private int textNegativeResId = R.string.rate_dialog_negative;
 
     private int dialogStyleResId = R.style.AppCompatAlertDialogStyle;
 
