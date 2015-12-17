@@ -122,7 +122,15 @@ call `Andialog.setView(View)`.
 ```java
 LayoutInflater inflater = (LayoutInflater)this.getSystemService(LAYOUT_INFLATER_SERVICE);
 View view = inflater.inflate(R.layout.custom_dialog, (ViewGroup)findViewById(R.id.layout_root));
-AppRate.with(this).setView(view).monitor();
+Andialog.with(this).setView(view).launch();
+```
+
+### Set custom style (upon version 0.1.1)
+
+call 'Andialog.setDialogStyle(YourCustomStyle)'.
+
+```java
+Andialog.with(this).setDialogStyle(R.style.YourCustomStyle).launch();
 ```
 
 ### Custom dialog
