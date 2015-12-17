@@ -1,0 +1,17 @@
+language: android
+
+android:  
+  components: 
+    - platform-tools
+    - android-23
+    - build-tools-23.0.0
+    - extra-android-m2repository
+             
+licenses:
+    - android-sdk-license-.+
+
+env:
+  -  TERM=dumb
+    
+script:
+  - ./gradlew build 
