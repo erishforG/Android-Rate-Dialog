@@ -2,14 +2,14 @@ Andialog / android-rate-dialog
 ============
 
 [![Build Status](https://travis-ci.org/erishforG/Android-Rate-Dialog.svg?branch=master)](https://travis-ci.org/erishforG/Android-Rate-Dialog)
+[![GitHub tag](https://img.shields.io/github/tag/erishforG/Android-Rate-Dialog.svg)](https://github.com/erishforG/Android-Rate-Dialog/tree/0.1.0)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/ngParty/ng-metadata/master/LICENSE)
 
 Andialog / Android-Rate-Dialog is a library to help you make RateDialog easier than before.
 
 ![screen shot](http://i.imgsafe.org/f845905.png)
 
 ## Getting Started
-
-![Maven Badges](https://maven-badges.herokuapp.com/maven-central/com.erish.andialog/andialog/badge.svg)
 
 You can download from maven central.
 
@@ -90,7 +90,7 @@ When you want to track significant events, write code as below.
 protected void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_main);
-  Andialog.with(this).setEventsTimes(2).monitor();
+  Andialog.with(this).setEventsTimes(2).launch();
 }
 
 @Override
