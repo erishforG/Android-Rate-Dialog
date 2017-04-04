@@ -14,7 +14,7 @@ You can download from maven central.
 
 ```groovy
 dependencies {
-  compile ‘com.erish.andialog:andialog:0.1.0’
+  compile ‘com.erish.andialog:andialog:0.2.0’
 }
 ```
 
