@@ -112,8 +112,6 @@ final class DialogManager {
                     intentToAppstore = IntentHelper.createIntentForGooglePlay(context);
                 else if(options.getPackageType() == CommonInfo.PACKAGE_TITLE_ONE)
                     intentToAppstore = IntentHelper.createIntentForOneStore(context, options.getPackageId());
-                else if(options.getPackageType() == CommonInfo.PACKAGE_TITLE_NAVER)
-                    intentToAppstore = IntentHelper.createIntentForNaverApps(context, options.getPackageId());
 
                 context.startActivity(intentToAppstore);
                 PreferenceHelper.setAgreeShowDialog(context, false);
@@ -165,8 +163,6 @@ final class DialogManager {
                     intentToAppstore = IntentHelper.createIntentForGooglePlay(context);
                 else if(options.getPackageType() == CommonInfo.PACKAGE_TITLE_ONE)
                     intentToAppstore = IntentHelper.createIntentForOneStore(context, options.getPackageId());
-                else if(options.getPackageType() == CommonInfo.PACKAGE_TITLE_NAVER)
-                    intentToAppstore = IntentHelper.createIntentForNaverApps(context, options.getPackageId());
 
                 context.startActivity(intentToAppstore);
                 PreferenceHelper.setAgreeShowDialog(context, false);
