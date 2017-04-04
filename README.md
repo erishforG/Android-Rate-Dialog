@@ -1,7 +1,6 @@
 Andialog / android-rate-dialog
 ============
 
-[![Build Status](https://travis-ci.org/erishforG/Android-Rate-Dialog.svg?branch=master)](https://travis-ci.org/erishforG/Android-Rate-Dialog)
 [![GitHub tag](https://img.shields.io/github/tag/erishforG/Android-Rate-Dialog.svg)](https://github.com/erishforG/Android-Rate-Dialog/tree/0.1.0)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/ngParty/ng-metadata/master/LICENSE)
 
@@ -25,7 +24,7 @@ Please try to move the [sample](https://github.com/erishforG/Android-Rate-Dialog
 
 ## Support
 
-andialog supports over API level 9.
+andialog supports over API level 16.
 
 ### Configuration
 
@@ -125,7 +124,7 @@ View view = inflater.inflate(R.layout.custom_dialog, (ViewGroup)findViewById(R.i
 Andialog.with(this).setView(view).launch();
 ```
 
-### Set custom style (upon version 0.1.1)
+### Set custom style (version 0.2.0)
 
 call 'Andialog.setDialogStyle(YourCustomStyle)'.
 
