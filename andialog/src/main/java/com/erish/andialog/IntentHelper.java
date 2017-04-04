@@ -19,10 +19,6 @@ final class IntentHelper {
         return packageId == null ? null : Uri.parse(CommonInfo.PACKAGE_ADDRESS_ONE + packageId);
     }
 
-    static Uri getNaverApps(String packageId) {
-        return packageId == null ? null : Uri.parse(CommonInfo.PACKAGE_ADDRESS_NAVER + packageId);
-    }
-
     static Intent createIntentForGooglePlay(Context context) {
         Intent intent = new Intent(Intent.ACTION_VIEW, getGooglePlay(context.getPackageName()));
         intent.setPackage(GOOGLE_PLAY_PACKAGE_NAME);
@@ -31,12 +27,6 @@ final class IntentHelper {
 
     static Intent createIntentForOneStore(Context context, String packageId) {
         Intent intent = new Intent(Intent.ACTION_VIEW, getOneStore(packageId));
-        intent.setPackage(GOOGLE_PLAY_PACKAGE_NAME);
-        return intent;
-    }
-
-    static Intent createIntentForNaverApps(Context context, String packageId) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, getNaverApps(packageId));
         intent.setPackage(GOOGLE_PLAY_PACKAGE_NAME);
         return intent;
     }
