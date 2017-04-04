@@ -1,4 +1,16 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+publish {
+    userOrg = 'erishforg'
+    groupId = 'com.erish.andialog'
+    artifactId = 'andialog'
+    publishVersion = '0.2.0'
+    desc = 'a library to help you make RateDialog easier than before'
+    website = 'https://github.com/erishforG/Android-Rate-Dialog'
+    issueTracker = "${website}/issues"
+    repository = "${website}.git"
+}
 
 android {
     compileSdkVersion 25
@@ -8,7 +20,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
-        versionName "0.1.0"
+        versionName "0.2.0"
     }
     buildTypes {
         release {
