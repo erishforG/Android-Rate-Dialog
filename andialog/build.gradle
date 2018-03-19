@@ -1,6 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
 
+// check for publishing http://sunghwanjo94.blogspot.kr/2015/07/jcenter.html
+
 publish {
     userOrg = 'erishforg'
     groupId = 'com.erish.andialog'
